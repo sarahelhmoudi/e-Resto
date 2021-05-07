@@ -7,4 +7,10 @@
     <string name="ble_scan_play_title">Lancer le scan BLE</string>
     <string name="todo">TODO</string>
 
+    <string name="ble_device_status">Status : %1$s</string>
+    <string name="ble_device_status_connecting">Connexion en cours...</string>
+    <string name="ble_device_status_connected">Connecté</string>
+    <string name="ble_device_status_disconnected">Deconnecté</string>
+    <string name="ble_device_status_disconnecting">Deconnexion en cours...</string>
+
 </resources>

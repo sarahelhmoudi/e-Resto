@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cellBLE"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="10dp"
     app:cardElevation="4dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -13,43 +13,48 @@
     app:layout_constraintTop_toTopOf="parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cellule"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         android:layout_height="50dp"
 
-        <ImageView
-            android:id="@+id/image"
+        <TextView
+            android:id="@+id/idDevice"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:background="#6AF0A985"
+            android:textAlignment="center"
+            android:textColor="#F4511E"
+            android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:scaleType="centerCrop"/>
+            tools:text="00" />
 
         <TextView
             android:id="@+id/nameDevice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="311dp"
+            android:layout_height="19dp"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:shadowColor="#C34545"
             android:text="TextView"
+            android:textColor="#F4511E"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/image"
-            app:layout_constraintTop_toTopOf="@+id/image" />
+            app:layout_constraintStart_toEndOf="@+id/idDevice"
+            app:layout_constraintTop_toTopOf="@+id/idDevice" />
 
         <TextView
             android:id="@+id/macDevice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="312dp"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/imageItem"
-            app:layout_constraintStart_toEndOf="@+id/image" />
+            app:layout_constraintBottom_toBottomOf="@+id/idDevice"
+            app:layout_constraintStart_toEndOf="@+id/idDevice" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -23,7 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Nom"
-        android:textAlignment="center"
         android:textColor="#FF5722"
         android:textSize="30sp"
         android:textStyle="bold"

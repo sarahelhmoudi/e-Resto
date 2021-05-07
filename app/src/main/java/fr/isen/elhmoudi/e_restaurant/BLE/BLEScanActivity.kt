@@ -105,9 +105,13 @@ class BLEScanActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerDevice() {
-        leDeviceListAdapter = BLEScanAdapter(mutableListOf())
-        binding.listAppareil.layoutManager = LinearLayoutManager(this)
-        binding.listAppareil.adapter = leDeviceListAdapter
+        binding.menuList.layoutManager = LinearLayoutManager(this)
+        leDeviceListAdapter = BLEScanAdapter(mutableListOf()){
+            val intent = Intent(this, BLEDeviceActivity::class.java)
+            intent.putExtra("devices", it.device)
+            startActivity(intent)
+        }
+        binding.menuList.adapter = leDeviceListAdapter
     }
 
     private fun isDeviceHasBLESupport(): Boolean {
@@ -117,6 +121,8 @@ class BLEScanActivity : AppCompatActivity() {
         }
         return packageManager.hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)
     }
+
+
 
     private fun scanLeDevice() {
         bluetoothLeScanner?.let { scanner ->
@@ -137,7 +143,6 @@ class BLEScanActivity : AppCompatActivity() {
     private fun togglePlayPauseAction() {
         isScanning = !isScanning
         if (isScanning) {
-            Log.d("ScanDevices", "onRequestPermON")
             binding.bleScanTitle.text = getString(R.string.ble_scan_pause_title)
             binding.progressBar.isVisible = true
             binding.divider.isVisible = false
@@ -145,7 +150,7 @@ class BLEScanActivity : AppCompatActivity() {
             scanLeDevice()
         } else {
             binding.bleScanTitle.text = getString(R.string.ble_scan_play_title)
-            binding.loadingProgress.isVisible = false
+            binding.progressBar.isVisible = false
             binding.divider.isVisible = true
             binding.bleScanPlayPauseAction.setImageResource(R.drawable.ic_play)
         }
@@ -154,7 +159,6 @@ class BLEScanActivity : AppCompatActivity() {
     private val leScanCallback: ScanCallback = object : ScanCallback() {
         override fun onScanResult(callbackType: Int, result: ScanResult) {
             super.onScanResult(callbackType, result)
-            Log.d("BLEScan", "CC LE SCAN")
             leDeviceListAdapter?.addDevice(result)
             leDeviceListAdapter?.notifyDataSetChanged()
         }

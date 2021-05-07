@@ -21,6 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ERestaurant">
         <activity android:name=".BLE.BLEScanActivity"/>
+        <activity android:name=".BLE.BLEDeviceActivity"/>
         <activity android:name=".DetailActivity"/>
         <activity android:name=".CategoryActivity" />
         <activity android:name=".HomeActivity">
