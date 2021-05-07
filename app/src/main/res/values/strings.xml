@@ -3,7 +3,8 @@
     <string name="Main_action">Entrees</string>
     <string name="Main_action1">Plats</string>
     <string name="Main_action2">Deserts</string>
-    <string name="textview">TextView</string>
     <string name="ble_scan_pause_title">Scan BLE en cours...</string>
-    <string name="ble_scan_play_title">Lancer le scan BBLE</string>
+    <string name="ble_scan_play_title">Lancer le scan BLE</string>
+    <string name="todo">TODO</string>
+
 </resources>

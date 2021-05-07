@@ -6,13 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
+    <ImageView
+        android:id="@+id/imageDetail"
+        android:layout_width="419dp"
+        android:layout_height="182dp"
+        android:contentDescription="TODO"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
     <TextView
-        android:id="@+id/titleDetail"
+        android:id="@+id/nameDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginTop="8dp"
+        android:text="Nom"
+        android:textAlignment="center"
+        android:textColor="#FF5722"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageDetail"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <TextView
+        android:id="@+id/ingredientDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="ingredient"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameDetail" />
+
+    <TextView
+        android:id="@+id/priceDetail"
+        android:layout_width="66dp"
+        android:layout_height="24dp"
+        android:text="prix"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/quantite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientDetail" />
+
+    <ImageView
+        android:id="@+id/plus"
+        android:layout_width="33dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="132dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/plus_"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/quantite" />
+
+    <ImageView
+        android:id="@+id/moins"
+        android:layout_width="33dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="132dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/moins_"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/quantite"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/quantite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="132dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/plus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/moins" />
+
+    <TextView
+        android:id="@+id/prixTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prix total"
+        android:textColor="#FF5722"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantite" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
