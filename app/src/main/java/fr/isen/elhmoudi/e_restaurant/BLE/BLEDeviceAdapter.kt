@@ -103,7 +103,7 @@ class BLEDeviceAdapter(
 
         }
         holder.lecture.setOnClickListener {
-            val result = gatt?.readCharacteristic(characteristic)
+
             if (characteristic.value != null) {
                 val texteRecu = String(characteristic.value)
                 holder.valeur.text = "Valeur : ${texteRecu}"
@@ -135,7 +135,6 @@ class BLEDeviceAdapter(
             if (characteristic.value == null) {
                 holder.valeur.text = "Valeur : 0"
             } else {
-                var temp = (characteristic.value).toString()
                 holder.valeur.text = "Valeur : ${byteArrayToHexString(characteristic.value)}"
             }
         }
